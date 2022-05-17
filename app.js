@@ -19,7 +19,7 @@ require('dotenv').config()
 
 //objects initialization
 const app=express()
-const PORTNO =process.env.PORTNO || 8080 
+const PORTNO =process.env.PORT || 8080 
 //setup swagger ui for docs
 const docs= YAML.load('./swagger.yaml')
 
