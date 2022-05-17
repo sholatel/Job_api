@@ -25,7 +25,7 @@ const docs= YAML.load('./swagger.yaml')
 
 //database connection 
 const db_url= `${process.env.MONGO_URI_USERNAME}${encodeURIComponent(process.env.MONGO_URI_PASSWORD)}${process.env.MONGO_URI_END}`
-const local_db_url=process.env.LOCAL_MONGO_URI
+//const local_db_url=process.env.LOCAL_MONGO_URI
 const start= async ()=> {
     try {
         await connectDb(db_url) 

@@ -1,120 +1,14 @@
 openapi: 3.0.0
 info:
-  title: Job_api
+  title: Job API
   description: An API where registered user can post new jobs and manage how the jobs flow. User can create, update, delete, and view jobs with our the API token given to the user. Unregistered users can search for available jobs and view the jobs details.
   contact:
     name: Yusuf
     url: https://www.linkedin.com/in/yusuf-sholadoye-7468081a3/
     email: stridestek@gmail.com
   version: '1.0'
-  x-codegen-settings:
-    Nullify404: false
-    GenerateAsyncCode: true
-    UseMethodPrefix: false
-    UseModelPostfix: false
-    UseControllerPrefix: true
-    UseEnumPostfix: true
-    CollectParameters: false
-    UseConstructorsForConfig: false
-    UseCommonSDKLibrary: false
-    iOSUseAppInfoPlist: false
-    AndroidUseAppManifest: false
-    BodySerialization: 0
-    EnableAdditionalModelProperties: false
-    PreserveParameterOrder: true
-    AppendContentHeaders: true
-    iOSGenerateCoreData: false
-    GenerateInterfaces: false
-    NodeHttpClient: NODE_REQUEST
-    ValidateRequiredParameters: false
-    JavaUsePropertiesConfig: false
-    Timeout: 0
-    StoreTimezoneInformation: false
-    EnablePHPComposerVersionString: false
-    EnableLogging: false
-    ArraySerialization: Indexed
-    ModelSerializationScheme: Json
-    UseExceptionPrefix: true
-    RunscopeEnabled: false
-    AndroidHttpClient: ANDROID_OK
-    ObjCHttpClient: UNIREST
-    CSharpHttpClient: UNIREST
-    PHPHttpClient: UNIREST
-    JavaHttpClient: JAVA_OK
-    ParameterArrayFormat: ParamArrayWithIndex
-    SecurityProtocols:
-    - Ssl3
-    - Tls
-    GenerateTravisConfig: false
-    GenerateCircleConfig: false
-    GenerateAppveyorConfig: false
-    GenerateJenkinsConfig: false
-    EnableHttpCache: false
-    Retries: 0
-    RetryInterval: 1
-    GenerateAdvancedDocs: true
-    UnderscoreNumbers: true
-    UseSingletonPattern: true
-    DisableLinting: false
-    ApplyCustomizations: []
-    SortResources: false
-    AllowSkippingSSLCertVerification: false
-    DoNotSplitWords: []
-    EnableGlobalUserAgent: true
-    ReturnCompleteHttpResponse: false
-    GenerateModels: true
-    GenerateExceptions: true
-    IgnoreIfNullJson: false
-    DisableDocs: false
-    LiftParameterDescriptionFromCustomType: false
-    ThrowForHttpErrorStatusCodes: true
-    ResponseMapping:
-      Type: Simple
-    ForceKeywordArgsInRuby: false
-    SymbolizeHashKeysInRuby: false
-    UsageExampleEndpoint:
-      Description: ''
-      EndpointGroupName: ''
-      EndpointName: ''
-    IsLatestVersion: false
-    EnableImmutableModels: false
-    GenerateEnums: true
-    BackoffFactor: 2
-    StatusCodesToRetry:
-    - 408
-    - 413
-    - 429
-    - 500
-    - 502
-    - 503
-    - 504
-    - 521
-    - 522
-    - 524
-    RequestMethodsToRetry:
-    - GET
-    - PUT
-    UserConfigurableRetries: true
-    UseEndpointMethodName: false
-    EncodeTemplateParameters: true
-    GenerateExamplesForOptionalFields: false
-    MultitargetDotnetVersions: false
-    BackoffMax: 0
-    RetryOnTimeout: true
-    EnableCookies: false
-    EnableJsonPassThroughForAny: false
-  x-server-configuration:
-    default-environment: production
-    default-server: Server 1
-    environments:
-    - name: production
-      servers:
-      - name: Server 1
-        url: https://localhost:8080/api/v1
-    parameters: []
-  x-image-uri: ''
 servers:
-- url: https://localhost:8080/api/v1
+- url: https://sholatel-job-api-app.herokuapp.com/api/v1
   variables: {}
 paths:
   /auth/register:
@@ -141,38 +35,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /auth/register
-          headers:
-            Content-Type: application/json
-          body: >-
-            {
-
-              "username": "yusuf",
-
-              "email": "yusuforiade1616@gmail.com",
-
-              "password": "Apiv1@api"
-
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          statusCode: '200'
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: false
-        x-testName: Register
   /auth/login:
     post:
       tags:
@@ -196,36 +58,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /auth/login
-          headers:
-            Content-Type: application/json
-          body: >-
-            {
-
-              "email": "yusuforiade1616@gmail.com",
-
-              "password": "Apiv1@api"
-
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          statusCode: '200'
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: false
-        x-testName: Login
   /job:
     post:
       tags:
@@ -252,42 +84,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-unitTests:
-      - request:
-          method: POST
-          uri: /job
-          headers:
-            Content-Type: application/json
-          body: >-
-            {
-
-              "title": "Frontend developer",
-
-              "description": "Use frameworks like ReactJs, Vuejs and Angular to design and manage our website frontend",
-
-              "status": "Pending",
-
-              "company": "Nilla",
-
-              "location": "Remote"
-
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          statusCode: '200'
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: false
-        x-testName: createJob
     get:
       tags:
       - job
@@ -300,26 +96,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /job
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          statusCode: '200'
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: false
-        x-testName: getAllJobs
   /job/627ad835245e60667b64370e:
     patch:
       tags:
@@ -343,36 +119,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-unitTests:
-      - request:
-          method: PATCH
-          uri: /job/627ad835245e60667b64370e
-          headers:
-            Content-Type: application/json
-          body: >-
-            {
-
-              "title": "Backend developer",
-
-              "description": "Developing and designing of api, database, and other backend systems for our company websites"
-
-            }
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          statusCode: '200'
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: false
-        x-testName: updateJob
     delete:
       tags:
       - job
@@ -385,26 +131,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-unitTests:
-      - request:
-          method: DELETE
-          uri: /job/627ad835245e60667b64370e
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          statusCode: '200'
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: false
-        x-testName: deleteJob
   /job/628312ef2e11e4a3a16493f4:
     get:
       tags:
@@ -418,26 +144,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /job/628312ef2e11e4a3a16493f4
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          statusCode: '200'
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: false
-        x-testName: getJob
   /search_job:
     get:
       tags:
@@ -451,26 +157,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /search_job
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          statusCode: '200'
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: false
-        x-testName: searchJob
   /:
     get:
       tags:
@@ -484,26 +170,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-      x-operation-settings:
-        CollectParameters: false
-        AllowDynamicQueryParameters: false
-        AllowDynamicFormParameters: false
-        IsMultiContentStreaming: false
-      x-unitTests:
-      - request:
-          method: GET
-          uri: /
-        expectedResponse:
-          x-allowExtraHeaders: true
-          x-bodyMatchMode: NONE
-          x-arrayOrderedMatching: false
-          x-arrayCheckCount: false
-          x-matchResponseSchema: true
-          statusCode: '200'
-          headers: {}
-        x-testShouldPass: true
-        x-testEnabled: false
-        x-testName: searchSingleJob
 components:
   schemas:
     RegisterRequest:
