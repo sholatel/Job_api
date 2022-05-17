@@ -1,5 +1,5 @@
 ## About the project
-An API where registered user can post new jobs and manage how the jobs recruitment flows. User can create, update, delete, and view jobs with  the API token assigned to the user. Unregistered users can search for available jobs and view the jobs details.
+An API where registered user can post new jobs and manage how the jobs recruitment flows. User can create, update, delete, and view jobs with  the API token assigned to the user. Unregistered users can search for available jobs and view the jobs details. Job searchers can search based on job title e.g frontend developer, job status e.g pending jobs, and so on. Results can be sorted, paginated and so on. Only the registered job owner can/poster can delete or update the job details.   
 
 
 ## models and database
@@ -67,7 +67,7 @@ An API where registered user can post new jobs and manage how the jobs recruitme
 
 ## Usage
 
-  [docs] <>   
+  [docs] <https://sholatel-job-api-app.herokuapp.com/>   
 
 ## Contact
 
